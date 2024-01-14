@@ -4,8 +4,8 @@ const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 
 const BLOCK_SIZE = 20
-const BOARD_WIDTH = 14
-const BOARD_HEIGHT = 30
+const BOARD_WIDTH = 16
+const BOARD_HEIGHT = 35
 
 let score = 0
 
@@ -15,45 +15,42 @@ canvas.height = BLOCK_SIZE * BOARD_HEIGHT
 context.scale(BLOCK_SIZE, BLOCK_SIZE)
 
 const board = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
-
-const piece = {
-    position: { x: 5, y: 5},
-    shape: [
-        [1, 1],
-        [1, 1]
-    ]
-}
 
 const pieces = [
     [
@@ -96,7 +93,20 @@ const pieces = [
 let dropCounter = 0
 let lastTime = 0
 
+let gameOver = false;
+
 function update(time = 0){
+    
+    if (gameOver) {
+        context.fillStyle = '#000000';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = '#FFFFFF';
+        context.font = '30px Arial';
+        context.fillText('Game Over', canvas.width / 2 - 80, canvas.height / 2);
+        return;
+    }
+
    const deltaTime = time - lastTime
    lastTime = time
 
@@ -108,22 +118,52 @@ function update(time = 0){
 
     if(checkCollision()){
         piece.position.y--
+
+        solidifyPiece()
+        removeRows()
+        cambiarPieza()
     }
-   }
+}
 
     draw()
     window.requestAnimationFrame(update)
 }
 
+const colors = ['BF2F2F', 'F9E117', '70F917', '1AC3EC', '003AFF', '5D29FF', 'DC00FF', '08390D']
+let pieceColor = '#' + colors[Math.floor(Math.random() * colors.length)];
+
+function inicializarNuevaPieza() {
+
+    return {
+        position: { x: Math.floor(BOARD_WIDTH / 2 - 2), y: 0 },
+        shape: pieces[Math.floor(Math.random() * pieces.length)],
+        color: '#' + colors[Math.floor(Math.random() * colors.length)]
+    };
+}
+
+let piece = inicializarNuevaPieza();
+
+
 function draw(){
-    context.fillStyle = '#000'
+
+    context.fillStyle = '#000000'
     context.fillRect(0, 0, canvas.width, canvas.height)
+
+    context.lineWidth = 0.1;
 
     board.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value == 1) {
-                context.fillStyle = 'blue'
-                context.fillRect(x, y, 1, 1)
+                context.fillStyle = pieceColor
+                context.fillRect(x, y, 1, 1).
+                context.strokeStyle = '#000000';
+                context.strokeRect(x, y, 1, 1);
+            } 
+            else if (value && typeof value === 'object' && value.color) {
+                context.fillStyle = value.color;
+                context.fillRect(x, y, 1, 1);
+                context.strokeStyle = '#000000';
+                context.strokeRect(x, y, 1, 1);
             }
         })
     })
@@ -131,11 +171,17 @@ function draw(){
     piece.shape.forEach((row, y) => {
         row.forEach((value, x) => {
             if (value == 1) {
-                context.fillStyle = 'red'
+                context.fillStyle = piece.color
                 context.fillRect(x + piece.position.x, y + piece.position.y, 1, 1)
+                context.strokeStyle = '#000000';
+                context.strokeRect(x + piece.position.x, y + piece.position.y, 1, 1);
             }
         })
     })
+}
+function cambiarPieza() {
+    piece = inicializarNuevaPieza();
+    pieceColor = '#' + colors[Math.floor(Math.random() * colors.length)];
 }
 
 document.addEventListener('keydown', event => {
@@ -157,6 +203,7 @@ document.addEventListener('keydown', event => {
             piece.position.y--
             solidifyPiece()
             removeRows()
+            cambiarPieza()
         }
     }  
     if(event.key == 'ArrowUp'){
@@ -195,7 +242,7 @@ function solidifyPiece(){
     piece.shape.forEach((row, y) => {
         row.forEach((value, x) => {
             if(value == 1){
-                board[y + piece.position.y][x + piece.position.x] = 1
+                board[y + piece.position.y][x + piece.position.x] = { color: piece.color };
             }
         })
     })
@@ -206,7 +253,7 @@ function solidifyPiece(){
     piece.shape = pieces[Math.floor(Math.random() * pieces.length)]
 
     if(checkCollision()){
-        window.alert("Game over!! Sorry!")
+        gameOver = true;
         board.forEach((row) => row.fill(0))
     }
 }
