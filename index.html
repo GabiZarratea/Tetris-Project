@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,23 +8,32 @@
     <title>Tetris</title>
   </head>
   <body>
-    <div class="separate">
-      <div class="div_">
-        <strong>NEXT PIECE: <span></span></strong>
+    <div class="body">
+      <div class="separate">
+        <div class="div_">
+            <strong>PIECE: </strong>
+            <canvas class="nextPieceCanvas"></canvas> 
+        </div>
+        <div class="div_">
+          <strong>RECORD: <span class="record"></span></strong>
+        </div>
       </div>
-      <div class="div_">
-        <strong>RECORD: <span></span></strong>
+      <div>
+        <canvas class="gameCanvas"></canvas>
+      </div>
+      <div class="separate">
+        <div class="div_">
+          <strong>SCORE: <span id="score"></span> </strong>
+        </div>
+        <div class="div_">
+          <strong>LINES: <span id="lines"></span> </strong>
+        </div>
       </div>
     </div>
     <div>
-      <canvas></canvas>
-    </div>
-    <div class="separate">
-      <div class="div_">
-        <strong>SCORE: <span></span> </strong>
-      </div>
-      <div class="div_">
-        <strong>LINES: <span></span> </strong>
+      <div class="message-container" style="display: none;">
+        <p class="game-over-message">¡Game Over!</p>
+        <button>RESTART</button>
       </div>
     </div>
     <script type="module" src="/main.js"></script>
