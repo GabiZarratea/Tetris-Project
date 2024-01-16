@@ -107,10 +107,10 @@ let lastTime = 0
 
 let gameOver = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-const storedRecord = JSON.parse(localStorage.getItem('tetrisRecord'));
-$record.innerText = `${storedRecord && storedRecord.score || 0}`;
-
+document.addEventListener('DOMContentLoaded', function() {    
+    const storedRecord = JSON.parse(localStorage.getItem('tetrisRecord'));
+    const recordScore = storedRecord ? storedRecord.score : 0;
+    $record.innerText = `${recordScore}`;
 });
 
 $restartButton.addEventListener('click', () => {
