@@ -337,6 +337,9 @@ function removeRows() {
         score += 100;
         lines += 1;
     });
+
+    $score.innerText = score;
+    $lines.innerText = lines;
 }
 
 function saveRecordLocal() {
