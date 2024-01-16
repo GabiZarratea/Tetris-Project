@@ -114,8 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $restartButton.addEventListener('click', () => {
 
-    score = 0;
-    lines = 0;
     gameOver = false;
 
     board.forEach(row => row.fill(0));
