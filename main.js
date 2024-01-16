@@ -130,8 +130,6 @@ $restartButton.addEventListener('click', () => {
 
 function update(time = 0){
 
-    score = 0;
-    lines = 0;
     $score.innerText = score;
     $lines.innerText = lines;
     
