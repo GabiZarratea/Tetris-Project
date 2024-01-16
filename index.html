@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Press+Start+2P?query=Press+Start+2P">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+  </head>
+  <body>
+    <div class="body">
+      <div class="separate">
+        <div class="div_">
+            <strong>PIECE: </strong>
+            <canvas class="nextPieceCanvas"></canvas> 
+        </div>
+        <div class="div_">
+          <strong>RECORD: <span class="record"></span></strong>
+        </div>
+      </div>
+      <div>
+        <canvas class="gameCanvas"></canvas>
+      </div>
+      <div class="separate">
+        <div class="div_">
+          <strong>SCORE: <span id="score"></span> </strong>
+        </div>
+        <div class="div_">
+          <strong>LINES: <span id="lines"></span> </strong>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="message-container" style="display: none;">
+        <p class="game-over-message">¡Game Over!</p>
+        <button>RESTART</button>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
