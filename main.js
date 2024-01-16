@@ -5,7 +5,6 @@ const nextPieceCanvas = document.querySelector('.nextPieceCanvas');
 const $record = document.querySelector('.record');
 const $restartButton = document.querySelector('.message-container button');
 
-
 const nextPieceContext = nextPieceCanvas.getContext('2d');
 const NEXT_PIECE_SIZE = 80;
 
@@ -109,7 +108,7 @@ let gameOver = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     const storedRecord = JSON.parse(localStorage.getItem('tetrisRecord'));
-    $record.innerText = `${storedRecord?.score || 0}`;
+    $record.innerText = `${storedRecord && storedRecord.score || 0}`;    
 });
 
 $restartButton.addEventListener('click', () => {
@@ -339,6 +338,9 @@ function removeRows() {
         score += 100;
         lines += 1;
     });
+
+    $score.innerText = score;
+    $lines.innerText = lines;
 }
 
 function saveRecordLocal() {
