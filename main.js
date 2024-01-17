@@ -348,11 +348,13 @@ function saveRecordLocal() {
 
     if (score > storedRecord.score) {
         const record = { score };
+        localStorage.setItem('tetrisRecord', JSON.stringify(record));
         return record;
     }
 
     return storedRecord;
 }
+
 
 
 
