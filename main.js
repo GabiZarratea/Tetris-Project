@@ -110,7 +110,7 @@ let gameOver = false;
 document.addEventListener('DOMContentLoaded', function() {
     const storedRecord = JSON.parse(localStorage.getItem('tetrisRecord'));
     $record.innerText = `${storedRecord && storedRecord.score || 0}`;
-}
+})
                         
 
 $restartButton.addEventListener('click', () => {
