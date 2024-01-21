@@ -144,7 +144,9 @@ function update(time = 0){
         $record.innerText = `${storedRecord.score || 0}`;
         
         document.querySelector('.message-container').style.display = 'block';
-        
+
+        score = 0;
+
         return;
     }
     const deltaTime = time - lastTime;
