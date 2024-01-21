@@ -145,6 +145,7 @@ function update(time = 0){
         
         document.querySelector('.message-container').style.display = 'block';
 
+        lines = 0;
         score = 0;
 
         return;
